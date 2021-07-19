@@ -1,0 +1,74 @@
+app=# \d
+                List of relations
+ Schema |       Name       |   Type   |  Owner   
+--------+------------------+----------+----------
+ public | hives            | table    | postgres
+ public | hives_id_seq     | sequence | postgres
+ public | nodes            | table    | postgres
+ public | nodes_id_seq     | sequence | postgres
+ public | operators        | table    | postgres
+ public | operators_id_seq | sequence | postgres
+(6 rows)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+app=# select reltuples as count from pg_class where oid = 'public.hives'::regclass;
+ count 
+-------
+     0
+(1 row)
+
+app=# select count(*) as count from hives;
+ count 
+-------
+     4
+(1 row)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+app=# select reltuples as count from pg_class where oid = 'public.nodes'::regclass;
+ count 
+-------
+     0
+(1 row)
+
+app=# select count(*) as count from nodes;
+ count 
+-------
+    20
+(1 row)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+app=# select reltuples as count from pg_class where oid = 'public.operators'::regclass;
+ count 
+-------
+     0
+(1 row)
+
+app=# select count(*) as count from operators;
+ count 
+-------
+    20
+(1 row)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+app=# \d+
+                                    List of relations
+ Schema |       Name       |   Type   |  Owner   | Persistence |    Size    | Description 
+--------+------------------+----------+----------+-------------+------------+-------------
+ public | hives            | table    | postgres | permanent   | 8192 bytes | 
+ public | hives_id_seq     | sequence | postgres | permanent   | 8192 bytes | 
+ public | nodes            | table    | postgres | permanent   | 8192 bytes | 
+ public | nodes_id_seq     | sequence | postgres | permanent   | 8192 bytes | 
+ public | operators        | table    | postgres | permanent   | 8192 bytes | 
+ public | operators_id_seq | sequence | postgres | permanent   | 8192 bytes | 
+(6 rows)
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+root@06d83afb131f:/workdir# du -sh $PGDATA/
+48M	/var/lib/postgresql/data/
+
+
