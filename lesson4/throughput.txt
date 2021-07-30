@@ -1,0 +1,63 @@
+cfg.MaxConns = 1
+cfg.MinConns = 1
+
+start attack
+duration: 10.227188116s
+threads: 1000
+queries: 56590
+QPS: 5659
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+cfg.MaxConns = 20
+cfg.MinConns = 1
+
+start attack
+duration: 10.021271667s
+threads: 1000
+queries: 405076
+QPS: 40507
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+cfg.MaxConns = 40
+cfg.MinConns = 1
+
+start attack
+duration: 10.019967429s
+threads: 1000
+queries: 448415
+QPS: 44841
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+cfg.MaxConns = 60
+cfg.MinConns = 1
+
+start attack
+duration: 10.019276392s
+threads: 1000
+queries: 460270
+QPS: 46027
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+cfg.MaxConns = 80
+cfg.MinConns = 1
+
+start attack
+duration: 10.019448058s
+threads: 1000
+queries: 445714
+QPS: 44571
+
+При 80 начинает деградировать.
+
+
+Параметры железа:
+
+CPU: Intel(R) Core(TM) i7-2600 CPU @ 3.40GHz
+Колличество ядер: 8
+ОЗУ: 12Gb
+SSD: 128Gb
+Network: 100Mbit/s
