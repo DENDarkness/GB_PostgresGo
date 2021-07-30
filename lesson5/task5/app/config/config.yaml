@@ -1,0 +1,13 @@
+server:
+  port: 7777
+
+client:
+  token: ""
+
+db:
+  dsn: "host=localhost user=app password=123 dbname=app port=5433 sslmode=disable TimeZone=Europe/Moscow"
+
+redis:
+  address: "redis:6379"
+  password: ""
+  db: 0
